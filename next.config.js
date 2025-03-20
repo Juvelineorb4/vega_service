@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   images: {
-    unoptimized: true,
+    unoptimized: false, // ❌ Evita usar `unoptimized: true` si estás en Netlify
     domains: [
       "source.unsplash.com",
       "images.unsplash.com",
@@ -31,6 +32,10 @@ const nextConfig = {
       },
     ],
   },
+  experimental: {
+    appDir: true, // ✅ Asegura que Next.js funcione bien en Netlify
+  },
+  output: "standalone", // ✅ Esto permite desplegar en servidores como Netlify sin problemas
 };
 
-module.exports = nextConfig; // ✅ Cambia `export default` por `module.exports`
+module.exports = nextConfig;

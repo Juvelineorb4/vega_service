@@ -1,9 +1,11 @@
 [build]
   command = "bun run build"
-  publish = "out"
+  publish = ".next"
+  functions = "netlify/functions"
 
 [build.environment]
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  NODE_VERSION = "18"  # O la versión de Node que uses
+  NEXT_PRIVATE_TARGET = "server"  # Asegura que Next.js use el modo correcto
 
 [images]
   remote_images = [
