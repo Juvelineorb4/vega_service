@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #fba442;
+  --secondary: #424644;
+  --background: #ffffff;
+  --text: #333;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold;
+  }
+}
+
+/* Componentes personalizados */
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 md:px-8 lg:px-12;
+  }
+
+  .btn-primary {
+    @apply bg-[#FBA442] hover:bg-orange-500 text-white font-semibold py-2 px-4 rounded-md transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-100 text-[#FBA442] border border-[#FBA442] font-semibold py-2 px-4 rounded-md transition-colors;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6;
+  }
+
+  .section-subtitle {
+    @apply text-xl md:text-2xl font-medium mb-4 text-gray-700;
+  }
+}
+.nav-button {
+  font-weight: 500;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.nav-button:hover {
+  color: #fba442;
+}
