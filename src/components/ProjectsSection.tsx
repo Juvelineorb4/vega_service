@@ -6,42 +6,42 @@ export default function ProjectsSection() {
   const projects = [
     {
       id: 1,
-      image: "https://ext.same-assets.com/proyecto1.jpg", // 🖼 Reemplaza con una imagen real
+      image: "/proyects/jackup.jpg", // 🖼 Reemplaza con una imagen real
       title: "Ingeniería y construcción del sistema eléctrico",
       description:
         "Sistema de potencia, control hidráulico y detección de incendio en 'Jack-Up Eagle One', Venezuela.",
     },
     {
       id: 2,
-      image: "https://ext.same-assets.com/proyecto2.jpg", // 🖼 Reemplaza con una imagen real
+      image: "/proyects/pozos.jpg", // 🖼 Reemplaza con una imagen real
       title: "Calibración de instrumentos en plataformas WHP",
       description:
         "Adecuación de pozos productores AP-03 y AP-04, en Campo Corocoro, Petrosucre, Estado Sucre, Venezuela.",
     },
     {
       id: 3,
-      image: "https://ext.same-assets.com/proyecto3.jpg", // 🖼 Reemplaza con una imagen real
+      image: "/proyects/corocoro.jpg", // 🖼 Reemplaza con una imagen real
       title: "Desmantelamiento de sistemas en Corocoro",
       description:
         "Sistema mecánico, eléctrico y control 'IPF' en Campo Corocoro, Estado Sucre, Venezuela.",
     },
     {
       id: 4,
-      image: "https://ext.same-assets.com/proyecto4.jpg", // 🖼 Reemplaza con una imagen real
+      image: "/proyects/sst.jpg", // 🖼 Reemplaza con una imagen real
       title: "Instalación de detección de incendio",
       description:
         "Sistema de detección de incendio en 'SST Huasteca', Puerto de Guanta, Estado Anzoátegui, Venezuela.",
     },
     {
       id: 5,
-      image: "https://ext.same-assets.com/proyecto5.jpg", // 🖼 Reemplaza con una imagen real
+      image: "/proyects/insladeaves.jpg", // 🖼 Reemplaza con una imagen real
       title: "Levantamiento del sistema eléctrico",
       description:
         "Base Científico Naval Simón Bolívar, Isla de Aves, Venezuela.",
     },
     {
       id: 6,
-      image: "https://ext.same-assets.com/proyecto6.jpg", // 🖼 Reemplaza con una imagen real
+      image: "/proyects/petripiar.jpg", // 🖼 Reemplaza con una imagen real
       title: "Pruebas y diagnóstico eléctrico",
       description:
         "Sistema de puesta a tierra en la sala de control de Petropiar, Estado Anzoátegui, Venezuela.",

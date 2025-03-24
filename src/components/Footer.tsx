@@ -1,19 +1,19 @@
 "use client";
 
-import Link from "next/link";
-import {
-  FaPhoneAlt,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-} from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Footer() {
+  // Scroll suave a una sección
+  const handleScroll = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <footer className="bg-gray-900 text-white py-10">
-      <div className="container-custom grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="container-custom grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Información de contacto */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Contacto</h3>
@@ -43,76 +43,59 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Enlaces rápidos */}
+        {/* Enlaces como el navbar */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Enlaces Rápidos</h3>
+          <h3 className="text-xl font-semibold mb-4">Enlaces</h3>
           <ul className="space-y-3">
             <li>
-              <Link href="/" className="hover:text-[#FBA442] transition-colors">
+              <button
+                onClick={() => handleScroll("hero")}
+                className="hover:text-[#FBA442] transition-colors"
+              >
                 Inicio
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="/empresa"
+              <button
+                onClick={() => handleScroll("reasons")}
+                className="hover:text-[#FBA442] transition-colors"
+              >
+                ¿Por qué Elegirnos?
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => handleScroll("about")}
                 className="hover:text-[#FBA442] transition-colors"
               >
                 Nuestra Empresa
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="/servicios"
+              <button
+                onClick={() => handleScroll("services")}
                 className="hover:text-[#FBA442] transition-colors"
               >
                 Servicios
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="/proyectos"
+              <button
+                onClick={() => handleScroll("projects")}
                 className="hover:text-[#FBA442] transition-colors"
               >
                 Proyectos Ejecutados
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="/contacto"
+              <button
+                onClick={() => handleScroll("contact")}
                 className="hover:text-[#FBA442] transition-colors"
               >
                 Contacto
-              </Link>
+              </button>
             </li>
           </ul>
-        </div>
-
-        {/* Redes sociales */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Síguenos</h3>
-          <div className="flex space-x-4">
-            <a
-              href="#"
-              target="_blank"
-              className="hover:text-[#FBA442] transition-colors"
-            >
-              <FaFacebook size={24} />
-            </a>
-            <a
-              href="#"
-              target="_blank"
-              className="hover:text-[#FBA442] transition-colors"
-            >
-              <FaInstagram size={24} />
-            </a>
-            <a
-              href="#"
-              target="_blank"
-              className="hover:text-[#FBA442] transition-colors"
-            >
-              <FaLinkedin size={24} />
-            </a>
-          </div>
         </div>
       </div>
 

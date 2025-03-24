@@ -5,8 +5,7 @@ export default function HeroSection() {
     <div
       className="relative h-[50vh] md:h-[60vh] lg:h-[70vh] bg-center bg-cover flex items-center justify-center text-center"
       style={{
-        backgroundImage:
-          "url('https://ext.same-assets.com/2438022090/380756966.png')",
+        backgroundImage: "url('/hero.png')",
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-30" />
@@ -24,9 +23,17 @@ export default function HeroSection() {
           </h4>
         </div>
         <div className="max-w-xl mx-auto">
-          <a href="/contacto" className="bg-[#FBA442] text-white px-6 py-3 ">
+          <button
+            onClick={() => {
+              const section = document.getElementById("contact");
+              if (section) {
+                section.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }}
+            className="bg-[#FBA442] text-white px-6 py-3 "
+          >
             Contáctanos
-          </a>
+          </button>
         </div>
       </div>
     </div>

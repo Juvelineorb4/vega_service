@@ -10,8 +10,7 @@ const mukta = Mukta({
 });
 
 export const metadata: Metadata = {
-  title: "Interior Design",
-  description: "Interior home design project",
+  title: "Vega Servicios",
 };
 
 export default function RootLayout({
@@ -22,9 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${mukta.variable} font-sans bg-white`}>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
