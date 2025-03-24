@@ -38,7 +38,10 @@ export default function Footer() {
             </li>
             <li className="flex items-center">
               <FaMapMarkerAlt className="text-[#FBA442] mr-3" />
-              <span>Venezuela</span>
+              <span>
+                Av principal el Tejar , Piritu, Edo Anzoategui , C.C
+                renacer local #1, Venezuela
+              </span>
             </li>
           </ul>
         </div>

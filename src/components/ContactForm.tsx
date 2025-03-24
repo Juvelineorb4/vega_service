@@ -3,37 +3,10 @@
 import { useState } from "react";
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    // Validación básica
-    if (!formData.name || !formData.email || !formData.message) {
-      alert("Por favor, completa los campos obligatorios.");
-      return;
-    }
-
-    // Aquí podrías enviar los datos a una API o backend
-    console.log("Datos enviados:", formData);
-    setSubmitted(true);
-  };
-
   return (
-    <div className="py-16 bg-gray-100">
+    <div className="py-16 bg-gray-100" id="contact">
       <div className="container-custom max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
         {submitted ? (
           <p className="text-green-600 text-center text-lg">
@@ -41,7 +14,21 @@ export default function ContactForm() {
             pronto.
           </p>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form
+            action="https://formsubmit.co/vegaadm2@gmail.com"
+            method="POST"
+            onSubmit={() => setSubmitted(true)}
+            className="space-y-6"
+          >
+            {/* Antibot para FormSubmit */}
+            <input type="hidden" name="_captcha" value="false" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://tusitio.com/gracias"
+            />
+            {/* Puedes cambiar esta URL si deseas redirigir al final */}
+
             {/* Nombre */}
             <div>
               <label className="block text-gray-700 font-medium">
@@ -50,10 +37,8 @@ export default function ContactForm() {
               <input
                 type="text"
                 name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full mt-2 px-4 py-2 border rounded-md focus:ring-[#FBA442] focus:border-[#FBA442]"
                 required
+                className="w-full mt-2 px-4 py-2 border rounded-md focus:ring-[#FBA442] focus:border-[#FBA442]"
               />
             </div>
 
@@ -65,14 +50,12 @@ export default function ContactForm() {
               <input
                 type="email"
                 name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full mt-2 px-4 py-2 border rounded-md focus:ring-[#FBA442] focus:border-[#FBA442]"
                 required
+                className="w-full mt-2 px-4 py-2 border rounded-md focus:ring-[#FBA442] focus:border-[#FBA442]"
               />
             </div>
 
-            {/* Teléfono (Opcional) */}
+            {/* Teléfono */}
             <div>
               <label className="block text-gray-700 font-medium">
                 Teléfono (Opcional)
@@ -80,8 +63,6 @@ export default function ContactForm() {
               <input
                 type="tel"
                 name="phone"
-                value={formData.phone}
-                onChange={handleChange}
                 className="w-full mt-2 px-4 py-2 border rounded-md focus:ring-[#FBA442] focus:border-[#FBA442]"
               />
             </div>
@@ -93,11 +74,9 @@ export default function ContactForm() {
               </label>
               <textarea
                 name="message"
-                value={formData.message}
-                onChange={handleChange}
                 rows={4}
-                className="w-full mt-2 px-4 py-2 border rounded-md focus:ring-[#FBA442] focus:border-[#FBA442]"
                 required
+                className="w-full mt-2 px-4 py-2 border rounded-md focus:ring-[#FBA442] focus:border-[#FBA442]"
               />
             </div>
 

@@ -8,7 +8,7 @@ export default function TeamSection() {
       id: 1,
       name: "Héctor Irigoyen",
       position: "Gerente General",
-      image: "https://ext.same-assets.com/placeholder1.jpg", // 🖼 Reemplaza con una imagen real
+      image: "/personas/hector.jpg", // 🖼 Reemplaza con una imagen real
       description:
         "Responsable de la planificación, organización y control de todas las actividades de la empresa.",
     },
@@ -16,7 +16,7 @@ export default function TeamSection() {
       id: 2,
       name: "Juan Irigoyen",
       position: "Gerente de Operaciones",
-      image: "https://ext.same-assets.com/placeholder2.jpg", // 🖼 Reemplaza con una imagen real
+      image: "/personas/juan.jpg", // 🖼 Reemplaza con una imagen real
       description:
         "Supervisa las actividades diarias de la empresa y asegura el cumplimiento de los planes operativos.",
     },
@@ -35,15 +35,17 @@ export default function TeamSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {teamMembers.map((member) => (
-            <div key={member.id} className="group">
+            <div key={member.id} className="group ">
               <div className="relative overflow-hidden rounded-lg shadow-md">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  width={400}
-                  height={400}
-                  className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
-                />
+                <div className="relative aspect-[4/4] w-full">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg"
+                  />
+                </div>
+
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                   <div className="border border-[#FBA442] rounded-md p-3 bg-white/10 backdrop-blur-sm">
                     <p className="text-xl font-semibold text-white">
